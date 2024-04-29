@@ -23,7 +23,7 @@ function App() {
       const updatedContacts = prevuesContacts.filter(
         (contact) => contact.id !== contactId
       );
-      localStorage.setItem("contact", JSON.stringify(updatedContacts));
+      localStorage.setItem("contacts", JSON.stringify(updatedContacts));
       return updatedContacts;
     });
   };
