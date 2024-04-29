@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./App.css";
 import ContactForm from "../ContactForm/ContactForm";
 import ContactList from "../ContactList/ContactList";
@@ -13,14 +13,26 @@ function App() {
   );
   const addContact = (newContact) => {
     setContacts((prevuesContacts) => {
-      return [...prevuesContacts, newContact];
+      const updatedContacts = [...prevuesContacts, newContact];
+      localStorage.setItem("contacts", JSON.stringify(updatedContacts));
+      return updatedContacts;
     });
   };
   const deleteContact = (contactId) => {
     setContacts((prevuesContacts) => {
-      return prevuesContacts.filter((contact) => contact.id !== contactId);
+      const updatedContacts = prevuesContacts.filter(
+        (contact) => contact.id !== contactId
+      );
+      localStorage.setItem("contact", JSON.stringify(updatedContacts));
+      return updatedContacts;
     });
   };
+  useEffect(() => {
+    const savedContacts = localStorage.getItem("contacts");
+    if (savedContacts) {
+      setContacts(JSON.parse(savedContacts));
+    }
+  }, []);
 
   return (
     <div className="mainContainer">
