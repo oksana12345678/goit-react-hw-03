@@ -7,7 +7,7 @@ export default function Contact({ contact: { id, name, number }, onDelete }) {
     <>
       <div className={css.listItemContainer}>
         <span className={css.listItemPice}>
-          <FaUser /> <p>{name} </p>
+          <FaUser /> <p className={css.contactName}>{name} </p>
         </span>
         <span className={css.listItemPice}>
           <FaPhone />

@@ -14,3 +14,8 @@
 .deleteButton:hover {
   background-color: rgb(233, 130, 130);
 }
+.contactName {
+  text-overflow: ellipsis;
+  max-width: 112px;
+  overflow: hidden;
+}
