@@ -1,5 +1,4 @@
 import { useId } from "react";
-import PropTypes from "prop-types";
 import css from "./SearchBox.module.css";
 export default function SearchBox({ value, onFilter }) {
   const finedId = useId();
@@ -16,8 +15,3 @@ export default function SearchBox({ value, onFilter }) {
     </div>
   );
 }
-
-SearchBox.propTypes = {
-  value: PropTypes.string.isRequired,
-  onFilter: PropTypes.func.isRequired,
-};

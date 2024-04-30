@@ -2,7 +2,6 @@ import { Formik, ErrorMessage, Field, Form } from "formik";
 import * as Yup from "yup";
 import { useId } from "react";
 import { nanoid } from "nanoid";
-import PropTypes from "prop-types";
 import css from "./ContactForm.module.css";
 
 export default function ContactForm({ onAdd }) {
@@ -61,13 +60,3 @@ export default function ContactForm({ onAdd }) {
     </Formik>
   );
 }
-ContactForm.propTypes = {
-  onAdd: PropTypes.func.isRequired,
-  contacts: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.string.isRequired,
-      name: PropTypes.string.isRequired,
-      number: PropTypes.string.isRequired,
-    })
-  ),
-};
